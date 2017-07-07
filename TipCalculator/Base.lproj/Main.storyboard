@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-k6-mJA">
+                                <rect key="frame" x="160.5" y="318" width="53" height="30"/>
+                                <state key="normal" title="15% Tip"/>
+                                <connections>
+                                    <action selector="CalcDefaultPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9E9-Iw-g16"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter bill amount" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eZv-nd-fhq">
+                                <rect key="frame" x="122.5" y="243" width="130" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-g3-WiQ" userLabel="Tip Amount Label">
+                                <rect key="frame" x="188" y="36" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8W-AK-xfb">
+                                <rect key="frame" x="200" y="378" width="147" height="30"/>
+                                <state key="normal" title="Calculate Custom Tip"/>
+                                <connections>
+                                    <action selector="calcCustomTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nyT-QH-Mtv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tip %" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MlV-eP-cSb">
+                                <rect key="frame" x="106" y="379" width="53" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="k8W-AK-xfb" firstAttribute="leading" secondItem="MlV-eP-cSb" secondAttribute="trailing" constant="41" id="5EF-NZ-5dg"/>
+                            <constraint firstItem="e1r-k6-mJA" firstAttribute="top" secondItem="eZv-nd-fhq" secondAttribute="bottom" constant="45" id="7k5-pW-vhe"/>
+                            <constraint firstItem="e1r-k6-mJA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HEb-uL-Lsj"/>
+                            <constraint firstItem="6oc-g3-WiQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="ZdS-KY-pjr"/>
+                            <constraint firstItem="6oc-g3-WiQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bV0-Eh-tRI"/>
+                            <constraint firstItem="MlV-eP-cSb" firstAttribute="top" secondItem="e1r-k6-mJA" secondAttribute="bottom" constant="31" id="cAJ-20-bhZ"/>
+                            <constraint firstItem="eZv-nd-fhq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgb-82-TLd"/>
+                            <constraint firstItem="e1r-k6-mJA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gBZ-eg-XrL"/>
+                            <constraint firstItem="k8W-AK-xfb" firstAttribute="top" secondItem="e1r-k6-mJA" secondAttribute="bottom" constant="30" id="qXS-VS-9wN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k8W-AK-xfb" secondAttribute="trailing" constant="12" id="ydW-Bf-J83"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTextField" destination="eZv-nd-fhq" id="0ix-oz-yTR"/>
+                        <outlet property="customTipTextField" destination="MlV-eP-cSb" id="ZH3-6K-yjY"/>
+                        <outlet property="tipAmountLabel" destination="6oc-g3-WiQ" id="KnP-Be-WcT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.632683658170919"/>
         </scene>
     </scenes>
 </document>
